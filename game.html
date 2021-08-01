@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>This is my final project Game</title>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var config = {
+            type: Phaser.AUTO,
+            width: 400,
+            height: 300,
+            physics:{
+                default: 'arcade',
+                arcade:{
+                    gravity: {y: 400},
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        var player;
+        var score = 0;
+        var scoreText = 0;
+
+        function preload()
+        {
+            this.load.image('guy', 'assets/theGameBoy.png');
+        }
+
+        var game = new Phaser.Game(config);
+
+        function create()
+        {
+
+            //Player
+            player = this.physics.add.sprite(100, 450, 'guy');
+            player.setCollideWorldBounds(true);
+
+            //Score
+            scoreText = this.add.text(10,10, 'Score: 0', {fontSize: '16px', fill: '#000' } );
+            
+        }
+
+        function update()
+        {}
+
+    
+    
+    </script>
+</body>
+</html>
