@@ -41,6 +41,8 @@
         {
             this.load.image('ground', 'assets/ground.png');
             this.load.image('guy', 'assets/theGameBoy.png');
+            this.load.image('obsticle', 'assets/obsticle.png');
+            
         }
 
         var game = new Phaser.Game(config);
@@ -55,12 +57,19 @@
             player = this.physics.add.sprite(50, 200, 'guy');
             player.setCollideWorldBounds(true);
 
+            //Obsticles
+            obsticle = this.physics.add.group();
+            obsticle.create(200, 300, 'obsticle');
+
             //Score
             scoreText = this.add.text(10,10, 'Score: 0', {fontSize: '16px', fill: '#000' } );
             
             cursors = this.input.keyboard.createCursorKeys();
             
             this.physics.add.collider(player, ground);
+
+            this.physics.add.overlap(player, obsticles, gameOver());
+
         }
 
         function update()
@@ -82,7 +91,12 @@
             {
                 player.setVelocityY(-100);
             }
+        }
 
+        function gameOver()
+        {
+            this.physics.pause();
+            startFunction();
         }
     </script>
     </div>
