@@ -94,7 +94,7 @@
 
     function startFunction()
     {
-        navogator.mediaDevices.getUserMedia(constraints)
+        navigator.mediaDevices.getUserMedia(constraints)
             .then(gotMedia)
             .catch(e => {console.error('getUserMedia() failed: ', e); });
     }
