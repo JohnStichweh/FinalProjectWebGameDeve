@@ -104,7 +104,7 @@
     function gotMedia(mediaStream)
     {
         videoTrack = mediaStream.getVideoTracks()[0];
-        var imageCapture = new Imagecapture(videoTrack);
+        var imageCapture = new ImageCapture(videoTrack);
         imageCapture.grabFrame()
             .then(processFrame)
             .catch(e => console.error('grabFrame() failed: ' + e));
