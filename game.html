@@ -5,7 +5,11 @@
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
 </head>
 <body>
-    <canvas id = 'backgroundCan'></canvas>
+<div id = 'container' style = 'position : relative'>
+    <div style = 'position:absolute; top:0; left:0;'>
+        <canvas id = 'backgroundCan'></canvas>
+    </div>
+    <div style = 'position:absolute; top:0; left:0;'>
     <script type="text/javascript" id = 'TheGame'>
         
         var config = {
@@ -81,7 +85,8 @@
 
         }
     </script>
-
+    </div>
+    </div>
     <div>
         <button onclick="startFunction()" id = 'captureImage'>Capture Image</button>
     </div>
