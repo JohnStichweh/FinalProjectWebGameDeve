@@ -25,7 +25,7 @@
                 }
             },
             scene: {
-                preload: preload,
+                preload: preload,  
                 create: create,
                 update: update
             }
@@ -87,14 +87,10 @@
     </script>
     </div>
     </div>
-    <div>
-        <button onclick="startFunction()" id = 'captureImage'>Capture Image</button>
-    </div>
+
+
 
     <script>
-    
-    
-
     var canvas = document.getElementById('backgroundCan');
     var videoTrack;
 
@@ -124,6 +120,10 @@
         videoTrack.stop();
     }
     </script>
+
+<div>
+    <button onclick="startFunction()" id = 'captureImage'>Capture Image</button>
+</div>
     
 </body>
 </html>
