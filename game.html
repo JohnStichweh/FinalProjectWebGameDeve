@@ -42,7 +42,8 @@
         function create()
         {
             //Grounf
-            ground = this.physics.add.sprite(290, 295, 'ground');
+            ground = this.physics.add.staticGroup();
+            ground.create(395, 295, 'ground').setScale(3).refreshBody(); 
 
             //Player
             player = this.physics.add.sprite(100, 290, 'guy');
