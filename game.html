@@ -36,6 +36,7 @@
         var score = 0;
         var scoreText = 0;
         var cursors;
+        var lblLoss = getElementById("loss");
 
         function preload()
         {
@@ -96,7 +97,6 @@
 
         function gameOver()
         {
-            var lblLoss = getElementById("loss");
             lblLoss.innerHTML = "^^  LOSER  ^^"
             startFunction();
         }
@@ -135,9 +135,9 @@
     }
     </script>
 
-    <div style = 'position:absolute; top:1; left:0;'>
+    <div style = 'position:absolute; top:2; left:0;'>
         <lable id = 'loss' style = 'font-size: 32px; color:red'></lable>
-    </div>>
+    </div>
     
 </body>
 </html>
