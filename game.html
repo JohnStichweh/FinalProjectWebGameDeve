@@ -83,31 +83,5 @@
     
     </script>
     
-    <div>
-        <button id = 'pipToggle'>TogglePIP</button>
-    </div>
-    <script>
-        const gameinPic = document.getElementById("TheGame");
-        const pipButton = document.getElementById("pipToggle");
-
-        pipButton.addEventListener("click", async () => 
-        {
-                try
-                {
-                    if(document.pictureInPictureElement)
-                    {
-                        await gameInPic.requestPictureInPicture();
-                    } else {
-                        await document.exitPictureInPicture();
-                    }
-                } catch (err) {
-                    //Picture in Picture mode failed to enter/leave
-                }
-        });
-
-
-    </script>
-
-
 </body>
 </html>
