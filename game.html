@@ -67,6 +67,7 @@
             cursors = this.input.keyboard.createCursorKeys();
             
             this.physics.add.collider(player, ground);
+            this.physics.add.collider(obsticle, ground);
 
             this.physics.add.overlap(player, obsticle, gameOver());
 
