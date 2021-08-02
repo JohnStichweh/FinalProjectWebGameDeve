@@ -5,6 +5,7 @@
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
 </head>
 <body>
+    <canvas id = 'backgroundCan'></canvas>
     <script type="text/javascript" id = 'TheGame'>
         
         var config = {
@@ -79,10 +80,11 @@
             }
 
         }
-
-    
-    
     </script>
+
+    <div>
+        <button onclick = 'startFunction()' id = 'captureImage'>Capture Image</button>
+    </div>
     
 </body>
 </html>
