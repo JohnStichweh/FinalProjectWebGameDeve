@@ -82,10 +82,12 @@
     
     
     </script>
-    <button id = 'pipToggle'>TogglePIP</button>
     
+    <div>
+        <button id = 'pipToggle'>TogglePIP</button>
+    </div>
     <script>
-        const game = document.getElementById("TheGame");
+        const gameinPic = document.getElementById("TheGame");
         const pipButton = document.getElementById("pipToggle");
 
         pipButton.addEventListener("click", async () => 
@@ -94,7 +96,7 @@
                 {
                     if(document.pictureInPictureElement)
                     {
-                        await game.requestPictureInPicture();
+                        await gameInPic.requestPictureInPicture();
                     } else {
                         await document.exitPictureInPicture();
                     }
