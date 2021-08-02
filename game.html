@@ -5,7 +5,7 @@
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
 </head>
 <body>
-    <script type="text/javascript">
+    <script type="text/javascript" id = 'TheGame'>
         
         var config = {
             type: Phaser.AUTO,
@@ -74,7 +74,7 @@
 
             if (cursors.up.isDown && player.body.touching.down)
             {
-                player.setVelocityY(-85);
+                player.setVelocityY(-100);
             }
 
         }
@@ -82,5 +82,30 @@
     
     
     </script>
+    <button id = 'pipToggle'>TogglePIP</button>
+    
+    <script>
+        const game = document.getElementById("TheGame");
+        const pipButton = document.getElementById("pipToggle");
+
+        pipButton.addEventListener("click", async () => 
+        {
+                try
+                {
+                    if(document.pictureInPictureElement)
+                    {
+                        await game.requestPictureInPicture();
+                    } else {
+                        await document.exitPictureInPicture();
+                    }
+                } catch (err) {
+                    //Picture in Picture mode failed to enter/leave
+                }
+        });
+
+
+    </script>
+
+
 </body>
 </html>
