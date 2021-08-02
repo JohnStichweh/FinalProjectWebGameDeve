@@ -26,12 +26,14 @@
         };
 
         var player;
+        var ground;
         var score = 0;
         var scoreText = 0;
         var cursors;
 
         function preload()
         {
+            this.load.image('ground', 'assets/ground.png');
             this.load.image('guy', 'assets/theGameBoy.png');
         }
 
@@ -39,6 +41,8 @@
 
         function create()
         {
+            //Grounf
+            ground = this.physics.add(390, 300, 'ground');
 
             //Player
             player = this.physics.add.sprite(100, 450, 'guy');
@@ -48,6 +52,8 @@
             scoreText = this.add.text(10,10, 'Score: 0', {fontSize: '16px', fill: '#000' } );
             
             cursors = this.input.keyboard.createCursorKeys();
+            
+            this.physics.add.collider(player, ground);
         }
 
         function update()
