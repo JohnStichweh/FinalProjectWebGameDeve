@@ -175,7 +175,7 @@
         function getWeather()
         {
             var key = 'cb91db623e95abcb88baeac46c824901';
-            fetch('api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=' + key)  
+            fetch('api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=cb91db623e95abcb88baeac46c824901')  
                 .then(function(resp) { return resp.json() }) 
                 .then(function(data) {changeBackground(data)})
                 .catch(function() { });
