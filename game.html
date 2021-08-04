@@ -4,7 +4,7 @@
     <title>This is my final project Game</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
 </head>
-<body>
+<body id = 'mainBody'>
 <div id = 'container' style = 'position : relative'>
     <div style = 'position:absolute; top:0; left:0; z-index: 2;'>
         <canvas id = 'backgroundCan' width = 500, heigth = 400></canvas>
@@ -167,17 +167,39 @@
     }
 
 
-    </script>
+    </script>  
 
     <script>
+        //Weather Getter, to change the background color
         function getWeather()
         {
             var key = 'cb91db623e95abcb88baeac46c824901';
             fetch('https://api.openweathermap.org/data/2.5/weather?id=Cincinnati&appid=' + key)  
                 .then(function(resp) { return resp.json() }) 
-                .then(function(data) {console.log(data);})
+                .then(function(data) {changeBackground(data)})
                 .catch(function() { });
         }
+
+        window.onload = function(){getWeather();}
+
+        theBody = documentn.getElementById('mainBody');
+        
+        function changeBackground(d)
+        {
+            if(d.weather[0].description == 'rain')
+            {
+                
+            }
+            else if (d.weather[0].description == 'sunny')
+            {
+
+            }
+            else
+            {
+                
+            }
+        }
+
     </script>
 
     <div style = 'position:absolute; bottom:0; left:0;'>
