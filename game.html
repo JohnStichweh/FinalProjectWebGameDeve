@@ -101,7 +101,7 @@
             if(obsticle.x < 0)
             {
                 resetObs(obsticle);
-                score -= 10;
+                score += 10;
             }
         }
 
@@ -115,7 +115,7 @@
 
         function moveObs(obsticle, speed)
         {
-            obsticle.x += speed;
+            obsticle.x -= speed;
         }
 
         function resetObs(obsticle)
