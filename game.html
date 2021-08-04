@@ -101,6 +101,7 @@
             if(obsticle.x < 0)
             {
                 resetObs(obsticle);
+                score += 10;
             }
         }
 
@@ -109,6 +110,7 @@
             var lblLoss = document.getElementById("loss");
             lblLoss.innerHTML = "^^  LOSER  ^^"
             startFunction();
+            gameOver = true;
         }
 
         function moveObs(obsticle, speed)
