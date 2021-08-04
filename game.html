@@ -175,10 +175,9 @@
         //Weather Getter, to change the background color
         function getWeather()
         {
-            var key = 'cb91db623e95abcb88baeac46c824901';
-            fetch('api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=cb91db623e95abcb88baeac46c824901')  
-                .then(function(resp) { return resp.json() }) 
-                .then(function(data) {changeBackground(data)})
+            fetch('http://api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=cb91db623e95abcb88baeac46c824901')  
+                .then(resp => resp.json()) 
+                .then(json => changeBackground(json))
                 .catch(function() { });
         }
 
@@ -188,11 +187,11 @@
         
         function changeBackground(d)
         {
-            if(d.weather[0].description == 'rain')
+            if(d.weather[0].main == 'rain')
             {
                 
             }
-            else if (d.weather[0].description == 'sunny')
+            else if (d.weather[0].main == 'sunny')
             {
 
             }
