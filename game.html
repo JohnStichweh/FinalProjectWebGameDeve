@@ -191,11 +191,11 @@
         {
             theBody = document.getElementById('mainBody');
 
-            if(d.weather[1].main == 'Clouds')
+            if(d.weather[0].main == 'Clouds')
             {
-                theBody.style.background = "red";
+                theBody.style.background = " blue";
             }
-            else if (d.weather[1].main == 'sunny')
+            else if (d.weather[0].main == 'sunny')
             {
                 theBody.style.background = "yellow";
             }
