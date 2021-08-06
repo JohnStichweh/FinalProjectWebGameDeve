@@ -177,7 +177,7 @@
         //Weather Getter, to change the background color
         function getWeather()
         {
-            fetch('http://api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=cb91db623e95abcb88baeac46c824901')  
+            fetch('https://api.openweathermap.org/data/2.5/weather?zip=45221,us&appid=cb91db623e95abcb88baeac46c824901')  
                 .then(resp => resp.json()) 
                 .then(json => changeBackground(json))
                 .catch(function() { });
