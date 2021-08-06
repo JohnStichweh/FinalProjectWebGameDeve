@@ -193,15 +193,19 @@
 
             if(d.weather[0].main == 'Clouds')
             {
-                theBody.style.background = " blue";
+                theBody.style.background = "gray";
             }
-            else if (d.weather[0].main == 'sunny')
+            else if (d.weather[0].main == 'Sunny')
             {
-                theBody.style.background = "yellow";
+                theBody.style.background = "Gold";
+            }
+            else if (d.weather[0].main == "Clear")
+            {
+                theBody.style.background = "AliceBlue";
             }
             else
             {
-                theBody.style.background = "gray";
+                theBody.style.background = "Lavender";
             }
         }
 
