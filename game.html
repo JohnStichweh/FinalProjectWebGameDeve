@@ -118,7 +118,7 @@
             var lblLoss = document.getElementById("loss");
             lblLoss.innerHTML = "^^  LOSER  ^^";
             speed = 0;
-            startFunction();
+            GetVideoFunction();
             
             gameOver = true;
         }
@@ -142,7 +142,7 @@
     var canvas = document.getElementById('backgroundCan');
     var videoTrack;
 
-    function startFunction()
+    function GetVideoFunction()
     {
         const constraints = {"video": { width: { max: 400 } } };
         navigator.mediaDevices.getUserMedia(constraints)
@@ -205,6 +205,7 @@
 
     <div style = 'position:absolute; bottom:0; left:0;'>
         <lable id = 'loss' style = 'font-size: 32px; color:red'></lable>
+        <button onClick="window.location.href=window.location.href">Play Again?</button>
     </div>
     
 </body>
