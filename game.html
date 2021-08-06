@@ -4,7 +4,7 @@
     <title>This is my final project Game</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
 </head>
-<body id = 'mainBody'>
+<body id = 'mainBody' style = "background-color: seashell;">
 <div id = 'container' style = 'position : relative'>
     <div style = 'position:absolute; top:0; left:0; z-index: 2;'>
         <canvas id = 'backgroundCan' width = 500, heigth = 400></canvas>
@@ -117,7 +117,7 @@
         {
             var lblLoss = document.getElementById("loss");
             var btnPlayAgain = document.getElementById("playAgain");
-            btnPlayAgain.display = "inline";
+            btnPlayAgain.removeAttribute("hidden");
             lblLoss.innerHTML = "^^  LOSER  ^^";
             speed = 0;
             GetVideoFunction();
@@ -185,21 +185,23 @@
 
         window.onload = function(){getWeather();}
 
-        theBody = document.getElementById('mainBody');
+        
         
         function changeBackground(d)
         {
+            theBody = document.getElementById('mainBody');
+
             if(d.weather[0].main == 'rain')
             {
-                
+                theBody.style.background = "blue";
             }
             else if (d.weather[0].main == 'sunny')
             {
-
+                theBody.style.background = "yellow";
             }
             else
             {
-
+                theBody.style.background = "gray";
             }
         }
 
@@ -207,7 +209,7 @@
 
     <div style = 'position:absolute; bottom:0; left:0;'>
         <lable id = 'loss' style = 'font-size: 32px; color:red'></lable>
-        <button onClick="window.location.href=window.location.href" style="display:none" id = "playAgain">Play Again?</button>
+        <button onClick="window.location.href=window.location.href" id = "playAgain" hidden>Start Over</button>
     </div>
     
 </body>
